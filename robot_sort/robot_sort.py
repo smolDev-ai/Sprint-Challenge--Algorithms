@@ -96,8 +96,54 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # Idea:
+        # Bubble sort? Slow, but potentially the easiest to implement here.
+        # Robot looks at the first item, and then immediately looks at the
+        # second it compares the two and the swaps the the smallest so that
+        # it's on the left. Then, it moves to the right and compares the next
+        # most adjacent element to the bigger of the two that it just looked
+        # at. But what is the light for??? Why is memory important???
+        # Way to keep track of something? But, what?
+        # If Bubble sort is used there's nothing to keep track of like that.
+
+        # Realization after starting to implement bubble -> I can't figure out
+        # how to work with a for loop within the constraints of the ruleset.
+        # going to try to implement Bubble sort with a while loop,
+        # but I have a feeling it's going to turn into a different sort
+        # iteration than what I'm intending. Here we go, anyway though.
+
+        # Still trying to implement the solution, but compare is None. Why?
+        # current issues with implementation: it's skipping indices
+        # Realization: Merge sort? Create a helper function like the merge
+        # function from sorting algos? Can't create any variables though.
+        # I also can't access instance variables so slicing the way I was
+        # before probably won't work.
+        
+        # Maybe three while loops? Outter checks if light is on,
+        # two inner check if you can move left or right and then sorts
+        # going that direction? Will check during reattempt.
+
+
+
+        # super naive implementation
+        self.set_light_on()
+        while self.light_is_on() is True:
+            self.swap_item()
+            if self.compare_item() is None:
+                self.move_right()
+            if self.compare_item() == 1:
+                self.swap_item()
+                self.move_right()
+            elif self.compare_item() == -1:
+                self.move_left()
+                self.swap_item()
+                self.move_right()
+            
+
+
+
+
+
 
 
 if __name__ == "__main__":
@@ -108,5 +154,5 @@ if __name__ == "__main__":
 
     robot = SortingRobot(l)
 
-    robot.sort()
+    print(robot.sort())
     print(robot._list)
