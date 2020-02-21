@@ -12,4 +12,6 @@ c) O(n)
 
 In this problem you're looking for the first floor that will break eggs when you drop it. Because it's a building the floors are already sorted (Floor 10 can't come before Floor 4).
 
+If given the floors as an array, break the array in half and start from the middle.
+
 My algorithmic solution to this would be a binary search which is a runtime of O(log n).
