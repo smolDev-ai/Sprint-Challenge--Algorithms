@@ -125,15 +125,15 @@ class SortingRobot:
 
         # super naive implementation
         self.set_light_on()
-        while self.light_is_on() == True:
+        while self.light_is_on():
 
             self.set_light_off()
 
-            if self.can_move_right() == False:
+            if self.can_move_right() is False:
 
-                while self.can_move_left() == True:
+                while self.can_move_left():
                     self.move_left()
-            while self.can_move_right() == True:
+            while self.can_move_right():
 
                 self.swap_item()
                 self.move_right()
